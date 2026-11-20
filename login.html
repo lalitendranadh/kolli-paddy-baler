@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block content %}
+<div class="card" style="max-width:420px;margin:40px auto"><h1 class="title">Login</h1><p class="muted">Owner and driver use separate accounts.</p>
+<form method="post"><label>Username</label><input name="username" autocomplete="username" required><br><br><label>Password</label><input name="password" type="password" autocomplete="current-password" required><br><br><button class="full">Login</button></form>
+<p class="muted">Initial demo accounts are listed in the setup guide. Change passwords before using.</p></div>{% endblock %}

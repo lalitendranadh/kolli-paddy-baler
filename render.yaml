@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: kolli-paddy-baler
+    runtime: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    disk:
+      name: baler-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: DATABASE_PATH
+        value: /var/data/business.db
+      - key: SECRET_KEY
+        generateValue: true
+      - key: OWNER_PASSWORD
+        sync: false
+      - key: DRIVER_PASSWORD
+        sync: false
